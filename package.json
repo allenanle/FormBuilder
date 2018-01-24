@@ -1,0 +1,9 @@
+{
+  "name": "form-builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Allen An Le",
+  "license": "ISC"
+}
