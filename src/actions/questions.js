@@ -4,11 +4,13 @@ let questionId = 0
 
 export const addQuestion = ({ parentId }) => ({
   type: 'ADD_QUESTION',
-  id: questionId++,
-  parentId,
-  subs: [],
-  questionInput: '',
-  questionType: '',
-  conditionType: '',
-  conditionInput: ''
+  payload: {
+    id: questionId++,
+    parentId,
+    subs: [],
+    questionInput: '',
+    questionType: '',
+    conditionType: '',
+    conditionInput: ''
+  }
 })
