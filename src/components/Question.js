@@ -1,6 +1,11 @@
 import React from 'react'
 
+
 const Question = (props) => {
+  const addSubInput = () => props.addQuestion({
+    parentId: props.id
+  })
+
   return (
     <div className='question'>
       <label>
@@ -20,7 +25,9 @@ const Question = (props) => {
       </label>
 
       {/* ADD SUB-INPUT */}
-      <button>ADD SUB-INPUT</button>
+      <button onClick={ addSubInput }>
+        ADD SUB-INPUT
+      </button>
 
       {/* DELETE */}
       <button>DELETE</button>
