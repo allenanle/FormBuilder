@@ -5,11 +5,13 @@ import { addQuestion } from '../actions/questions'
 import AddQuestion from '../components/AddQuestion'
 
 
-let App = () => (
+let App = ({ questions, addQuestion }) => (
   <div>
     <h1 style={{ textAlign: 'center' }}>
-      HELLO WORLD!
+      FORM BUILDER
     </h1>
+
+    <AddQuestion addQuestion={ addQuestion } />
   </div>
 )
 
