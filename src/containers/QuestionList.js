@@ -1,14 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { addQuestion } from '../actions/questions'
 import Question from '../components/Question'
 
 
-let QuestionList = ({ questions }) => (
+let QuestionList = ({ questions, addQuestion }) => (
   <div>
     {Object.keys(questions).map(id =>
       <Question
         key={ id }
+        addQuestion={ addQuestion }
         { ...questions[id] }
       />
     )}
@@ -19,6 +21,10 @@ const mapStateToProps = (state) => ({
   questions: state.questions
 })
 
-QuestionList = connect(mapStateToProps)(QuestionList)
+const mapDispatchToProps = {
+  addQuestion
+}
+
+QuestionList = connect(mapStateToProps, mapDispatchToProps)(QuestionList)
 
 export default QuestionList
