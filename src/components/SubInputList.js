@@ -5,13 +5,16 @@ import Question from './Question'
 
 const SubInputList = (props) => (
   <div className='sub-input-list'>
-    { props.subs.map(sub =>
-      <Question
-        key={ sub.id }
-        addQuestion={ props.addQuestion }
-        { ...subs[id] }
-      />
-    ) }
+    { props.subs.map(id => {
+      return (
+        <Question
+          key={ id }
+          addQuestion={ props.addQuestion }
+          questions={ props.questions }
+          { ...props.questions[id] }
+        />
+      )
+    }) }
   </div>
 )
 
