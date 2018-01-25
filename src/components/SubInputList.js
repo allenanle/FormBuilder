@@ -3,12 +3,12 @@ import React from 'react'
 import Question from './Question'
 
 
-const SubInputList = ({ subs }) => (
+const SubInputList = (props) => (
   <div className='sub-input-list'>
-    { subs.map(sub =>
+    { props.subs.map(sub =>
       <Question
         key={ sub.id }
-        addQuestion={ addQuestion }
+        addQuestion={ props.addQuestion }
         { ...subs[id] }
       />
     ) }
