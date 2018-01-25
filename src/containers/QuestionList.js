@@ -7,13 +7,17 @@ import Question from '../components/Question'
 
 let QuestionList = ({ questions, addQuestion }) => (
   <div>
-    {Object.keys(questions).map(id =>
-      <Question
-        key={ id }
-        addQuestion={ addQuestion }
-        { ...questions[id] }
-      />
-    )}
+    {Object.keys(questions).map(id => {
+      if (questions[id].parentId === null) {
+        return (
+          <Question
+            key={ id }
+            addQuestion={ addQuestion }
+            { ...questions[id] }
+          />
+        )
+      }
+    })}
   </div>
 )
 

@@ -9,7 +9,7 @@ const Question = (props) => {
   return (
     <div className='question'>
       <label>
-        Question
+        {props.id}. Question
         <input
           type="text"
         />
