@@ -3,7 +3,14 @@ import React from 'react'
 import Question from './Question.jsx'
 
 let Questions = ({ questions }) => (
-
+  <div>
+    {Object.keys(questions).map(id =>
+      <Question
+        key={ id }
+        { ...questions[id] }
+      />
+    )}
+  </div>
 )
 
 const mapStateToProps = (state) => ({
