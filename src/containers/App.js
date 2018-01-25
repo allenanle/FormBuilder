@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { addQuestion } from '../actions/questions'
+import QuestionList from './QuestionList'
 import AddQuestion from '../components/AddQuestion'
 
 
@@ -12,6 +13,7 @@ let App = ({ questions, addQuestion }) => (
     </h1>
 
     <AddQuestion addQuestion={ addQuestion } />
+    <QuestionList />
   </div>
 )
 

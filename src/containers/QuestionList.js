@@ -1,8 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import Question from './Question.jsx'
+import Question from '../components/Question'
 
-let Questions = ({ questions }) => (
+
+let QuestionList = ({ questions }) => (
   <div>
     {Object.keys(questions).map(id =>
       <Question
@@ -17,6 +19,6 @@ const mapStateToProps = (state) => ({
   questions: state.questions
 })
 
-Questions = connect(mapStateToProps)(Questions)
+QuestionList = connect(mapStateToProps)(QuestionList)
 
-export default Questions
+export default QuestionList
