@@ -5,26 +5,46 @@ import { addQuestion } from '../actions/questions'
 import Question from '../components/Question'
 
 
-let QuestionList = ({ questions, addQuestion }) => (
+let QuestionList = ({ questions, addQuestion, isSubInputList }) => (
   <div>
-    { Object.keys(questions).map(id => {
-      if (questions[id].parentId === null) {
+    { !isSubInputList &&
+      Object.keys(questions).map(id => {
+        if (questions[id].parentId === null) {
+          return (
+            <Question
+              key={ id }
+              questions={ questions }
+              addQuestion={ addQuestion }
+              { ...questions[id] }
+            />
+          )
+        }
+    }) }
+
+    { isSubInputList &&
+      props.subs.map(id => {
         return (
           <Question
             key={ id }
-            questions={ questions }
-            addQuestion={ addQuestion }
-            { ...questions[id] }
+            addQuestion={ props.addQuestion }
+            questions={ props.questions }
+            { ...props.questions[id] }
           />
         )
-      }
-    }) }
+      }) }
   </div>
 )
 
-const mapStateToProps = (state) => ({
-  questions: state.questions
-})
+const mapStateToProps = (state, ownProps) => (
+  ownProps.isSubInputList ?
+  {
+    ...ownProps,
+    questions: state.questions
+  } : {
+    questions: state.questions,
+    isSubInputList: false
+  }
+)
 
 const mapDispatchToProps = {
   addQuestion

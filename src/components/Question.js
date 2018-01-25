@@ -1,11 +1,10 @@
 import React from 'react'
 
 import SubInputList from './SubInputList'
+import QuestionList from '../containers/QuestionList'
 
 
 const Question = (props) => {
-  console.log(props)
-
   const addSubInput = () => props.addQuestion({
     parentId: props.id
   })
@@ -64,6 +63,14 @@ const Question = (props) => {
       <div>
         {props.subs.length > 0 &&
           <SubInputList
+            { ...props }
+          />
+        }
+      </div>
+      <div>
+        {props.subs.length > 0 &&
+          <QuestionList
+            isSubInputList={ true }
             { ...props }
           />
         }
