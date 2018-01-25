@@ -6,6 +6,7 @@ div.question {
   display: table;
   padding: 8px;
   margin-top: 10px;
-  border: 1px solid black;
+  margin-left: 15px;
+  border: 1px solid white;
   border-radius: 3px;
 }
