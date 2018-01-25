@@ -12,6 +12,7 @@ let QuestionList = ({ questions, addQuestion }) => (
         return (
           <Question
             key={ id }
+            questions={ questions }
             addQuestion={ addQuestion }
             { ...questions[id] }
           />
