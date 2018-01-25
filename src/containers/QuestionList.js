@@ -7,7 +7,7 @@ import Question from '../components/Question'
 
 let QuestionList = ({ questions, addQuestion }) => (
   <div>
-    {Object.keys(questions).map(id => {
+    { Object.keys(questions).map(id => {
       if (questions[id].parentId === null) {
         return (
           <Question
@@ -17,7 +17,7 @@ let QuestionList = ({ questions, addQuestion }) => (
           />
         )
       }
-    })}
+    }) }
   </div>
 )
 
