@@ -5,41 +5,45 @@ import { addQuestion } from '../actions/questions'
 import Question from '../components/Question'
 
 
-let QuestionList = ({ questions, addQuestion, isSubInputList }) => (
+let QuestionList = (props) => (
   <div>
-    { !isSubInputList &&
-      Object.keys(questions).map(id => {
-        if (questions[id].parentId === null) {
+    {/* QUESTION LIST */}
+    { !props.isSubInputList &&
+      Object.keys(props.questions).map(id => {
+        if (props.questions[id].parentId === null) {
           return (
             <Question
               key={ id }
-              questions={ questions }
-              addQuestion={ addQuestion }
-              { ...questions[id] }
+              questions={ props.questions }
+              addQuestion={ props.addQuestion }
+              { ...props.questions[id] }
             />
           )
         }
     }) }
 
-    { isSubInputList &&
-      props.subs.map(id => {
-        return (
-          <Question
-            key={ id }
-            addQuestion={ props.addQuestion }
-            questions={ props.questions }
-            { ...props.questions[id] }
-          />
-        )
-      }) }
+    {/* SUB-INPUT LIST */}
+    { props.isSubInputList &&
+      <div className='sub-input-list'>
+        { props.subs.map(id => {
+          return (
+            <Question
+              key={ id }
+              questions={ props.questions }
+              addQuestion={ props.addQuestion }
+              { ...props.questions[id] }
+            />
+          )
+        }) }
+      </div>
+    }
   </div>
 )
 
 const mapStateToProps = (state, ownProps) => (
   ownProps.isSubInputList ?
   {
-    ...ownProps,
-    questions: state.questions
+    ...ownProps
   } : {
     questions: state.questions,
     isSubInputList: false

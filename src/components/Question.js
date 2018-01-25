@@ -60,13 +60,7 @@ const Question = (props) => {
         </div>
       </div>
 
-      <div>
-        {props.subs.length > 0 &&
-          <SubInputList
-            { ...props }
-          />
-        }
-      </div>
+      {/* SUB-INPUT LIST */}
       <div>
         {props.subs.length > 0 &&
           <QuestionList
