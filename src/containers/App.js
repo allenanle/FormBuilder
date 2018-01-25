@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { addQuestion } from '../actions/questions'
+import AddQuestion from '../components/AddQuestion'
 
 
 let App = () => (
