@@ -11,38 +11,63 @@ const Question = (props) => {
   })
 
   return (
-    <div className='question'>
-      <div>
-        <label>
-          {props.id}. Question
-          <input
-            type="text"
-          />
-        </label>
+    <div>
+      <div className='question'>
+        {/* CONDITION */}
+        {props.parentId !== null &&
+          <div>
+            <label>
+              Condition
+              <select>
+                <option>EQUALS</option>
+                <option>GREATER THAN</option>
+                <option>LESS THAN</option>
+              </select>
+            </label>
+            <label>
+              <input
+                type="text"
+              />
+            </label>
+          </div>
+        }
 
-        <label>
-          Type
-          <select>
-            <option>YES/NO</option>
-            <option>TEXT</option>
-            <option>NUMBER</option>
-          </select>
-        </label>
+        {/* QUESTION */}
+        <div>
+          <label>
+            Question
+            <input
+              type="text"
+            />
+          </label>
+          <div>
+            <label>
+              Type
+              <select>
+                <option>YES/NO</option>
+                <option>TEXT</option>
+                <option>NUMBER</option>
+              </select>
+            </label>
+          </div>
+        </div>
 
-        {/* ADD SUB-INPUT */}
-        <button onClick={ addSubInput }>
-          ADD SUB-INPUT
-        </button>
-
-        {/* DELETE */}
-        <button>DELETE</button>
+        {/* BUTTONS */}
+        <div>
+          <button onClick={ addSubInput }>
+            ADD SUB-INPUT
+          </button>
+          <button>DELETE</button>
+        </div>
       </div>
 
-      {props.subs.length > 0 &&
-        <SubInputList
-          { ...props }
-        />
-      }
+      <div>
+        {props.subs.length > 0 &&
+          <SubInputList
+            { ...props }
+          />
+        }
+      </div>
     </div>
   )
 }

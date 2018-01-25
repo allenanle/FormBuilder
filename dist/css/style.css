@@ -4,9 +4,14 @@ body {
 
 div.question {
   display: table;
-  padding: 8px;
-  margin-top: 10px;
-  margin-left: 15px;
-  border: 1px solid white;
+  padding: 3px;
+  margin: 10px 0px 0px 20px;
+  border: 1px solid lightgray;
   border-radius: 3px;
+}
+
+div.sub-input-list {
+  display: table;
+  margin-top: -8px;
+  margin-left: 25px;
 }
