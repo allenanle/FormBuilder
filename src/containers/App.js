@@ -17,14 +17,10 @@ let App = ({ questions, addQuestion }) => (
   </div>
 )
 
-const mapStateToProps = (state) => ({
-  questions: state.questions
-})
-
 const mapDispatchToProps = {
   addQuestion
 }
 
-App = connect(mapStateToProps, mapDispatchToProps)(App)
+App = connect(null, mapDispatchToProps)(App)
 
 export default App
