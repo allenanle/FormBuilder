@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 
-import questions from './questions'
+import inputs from './inputs'
 
 
 const rootReducer = combineReducers({
-  questions
+  inputs
 })
 
 export default rootReducer

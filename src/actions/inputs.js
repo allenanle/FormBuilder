@@ -1,12 +1,12 @@
-export const ADD_QUESTION = 'ADD_QUESTION'
+export const ADD_INPUT = 'ADD_INPUT'
 export const UPDATE_FIELD = 'UPDATE_FIELD'
 
-let questionId = 0
+let inputId = 0
 
-export const addQuestion = ({ parentId }) => ({
-  type: 'ADD_QUESTION',
+export const addInput = ({ parentId }) => ({
+  type: ADD_INPUT,
   payload: {
-    id: questionId++,
+    id: inputId++,
     parentId,
     subs: [],
     questionText: '',
@@ -17,7 +17,7 @@ export const addQuestion = ({ parentId }) => ({
 })
 
 export const updateField = ({ id, field, input }) => ({
-  type: 'UPDATE_FIELD',
+  type: UPDATE_FIELD,
   payload: {
     id,
     field,

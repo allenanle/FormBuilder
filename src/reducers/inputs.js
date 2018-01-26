@@ -1,14 +1,14 @@
 import {
-  ADD_QUESTION,
+  ADD_INPUT,
   UPDATE_FIELD
-} from '../actions/questions.js'
+} from '../actions/inputs.js'
 
-const questions = (state = {}, action) => {
+const inputs = (state = {}, action) => {
   const payload = action.payload
   const newState = { ...state }
 
   switch (action.type) {
-    case ADD_QUESTION:
+    case ADD_INPUT:
       if (payload.parentId !== null) {
         newState[payload.parentId].subs.push(payload.id)
       }
@@ -24,4 +24,4 @@ const questions = (state = {}, action) => {
   }
 }
 
-export default questions
+export default inputs

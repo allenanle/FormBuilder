@@ -1,24 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addQuestion } from '../actions/questions'
-import QuestionList from './QuestionList'
-import AddQuestion from '../components/AddQuestion'
+import { addInput } from '../actions/inputs'
+import InputList from './InputList'
+import AddInput from '../components/AddInput'
 
 
-let App = ({ questions, addQuestion }) => (
+let App = ({ inputs, addInput }) => (
   <div>
     <h1 style={{ textAlign: 'center' }}>
       FORM BUILDER
     </h1>
 
-    <AddQuestion addQuestion={ addQuestion } />
-    <QuestionList />
+    <AddInput addInput={ addInput } />
+    <InputList />
   </div>
 )
 
 const mapDispatchToProps = {
-  addQuestion
+  addInput
 }
 
 App = connect(null, mapDispatchToProps)(App)

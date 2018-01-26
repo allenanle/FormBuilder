@@ -1,12 +1,14 @@
 import React from 'react'
 
-import QuestionList from '../containers/QuestionList'
+import InputList from '../containers/InputList'
 
 
-const Question = (props) => {
-  const addSubInput = () => props.addQuestion({
+const Input = (props) => {
+  const addSubInput = () => props.addInput({
     parentId: props.id
   })
+
+  const onInputChange = () => {}
 
   return (
     <div>
@@ -62,7 +64,7 @@ const Question = (props) => {
       {/* SUB-INPUT LIST */}
       <div>
         { props.subs.length > 0 &&
-          <QuestionList
+          <InputList
             isSubInputList={ true }
             { ...props }
           />
@@ -72,4 +74,4 @@ const Question = (props) => {
   )
 }
 
-export default Question
+export default Input
