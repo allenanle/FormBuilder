@@ -3,75 +3,87 @@ import React from 'react'
 import InputList from '../containers/InputList'
 
 
-const Input = (props) => {
-  const addSubInput = () => props.addInput({
-    parentId: props.id
-  })
+class Input extends React.Component {
+  constructor(props) {
+    super(props)
 
-  const onInputChange = () => {}
+    this.onAddSubInput = this.onAddSubInput.bind(this)
+  }
 
-  return (
-    <div>
-      <div className='question-form'>
-        {/* CONDITION */}
-        { props.parentId !== null &&
+  onAddSubInput() {
+    this.props.addInput({
+      parentId: this.props.id
+    })
+  }
+
+  onInputChange() {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <div className='question-form'>
+          {/* CONDITION */}
+          { this.props.parentId !== null &&
+            <div>
+              <label>
+                Condition
+                <select>
+                  <option>EQUALS</option>
+                  <option>GREATER THAN</option>
+                  <option>LESS THAN</option>
+                </select>
+              </label>
+              <label>
+                <input
+                  type="text"
+                />
+              </label>
+            </div>
+          }
+
+          {/* QUESTION */}
           <div>
             <label>
-              Condition
-              <select>
-                <option>EQUALS</option>
-                <option>GREATER THAN</option>
-                <option>LESS THAN</option>
-              </select>
-            </label>
-            <label>
+              Question
               <input
                 type="text"
               />
             </label>
+            <div>
+              <label>
+                Type
+                <select>
+                  <option>YES/NO</option>
+                  <option>TEXT</option>
+                  <option>NUMBER</option>
+                </select>
+              </label>
+            </div>
           </div>
-        }
 
-        {/* QUESTION */}
-        <div>
-          <label>
-            Question
-            <input
-              type="text"
-            />
-          </label>
+          {/* BUTTONS */}
           <div>
-            <label>
-              Type
-              <select>
-                <option>YES/NO</option>
-                <option>TEXT</option>
-                <option>NUMBER</option>
-              </select>
-            </label>
+            <button onClick={ this.onAddSubInput }>
+              ADD SUB-INPUT
+            </button>
+            <button>DELETE</button>
           </div>
         </div>
 
-        {/* BUTTONS */}
+        {/* SUB-INPUT LIST */}
         <div>
-          <button onClick={ addSubInput }>
-            ADD SUB-INPUT
-          </button>
-          <button>DELETE</button>
+          { this.props.subs.length > 0 &&
+            <InputList
+              isSubInputList={ true }
+              { ...this.props }
+            />
+          }
         </div>
       </div>
-
-      {/* SUB-INPUT LIST */}
-      <div>
-        { props.subs.length > 0 &&
-          <InputList
-            isSubInputList={ true }
-            { ...props }
-          />
-        }
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Input
