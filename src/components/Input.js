@@ -8,16 +8,15 @@ class Input extends React.Component {
     super(props)
 
     this.onAddSubInput = this.onAddSubInput.bind(this)
+    this.onInputChange = this.onInputChange.bind(this)
   }
 
   onAddSubInput() {
-    this.props.addInput({
-      parentId: this.props.id
-    })
+    this.props.addInput({ parentId: this.props.id })
   }
 
-  onInputChange() {
-
+  onInputChange(field, value) {
+    this.props.updateField(this.props.id, field, value)
   }
 
   render() {
@@ -49,15 +48,25 @@ class Input extends React.Component {
               Question
               <input
                 type="text"
+                onBlur={ (e) => this.onInputChange(
+                  'questionText',
+                  e.target.value.trim()
+                ) }
               />
             </label>
             <div>
               <label>
                 Type
-                <select>
-                  <option>YES/NO</option>
-                  <option>TEXT</option>
-                  <option>NUMBER</option>
+                <select
+                  onChange={ (e) => this.onInputChange(
+                    'questionType',
+                    e.target.value
+                  ) }
+                >
+                  <option hidden></option>
+                  <option value='yes/no'>YES/NO</option>
+                  <option value='text'>TEXT</option>
+                  <option value='number'>NUMBER</option>
                 </select>
               </label>
             </div>
