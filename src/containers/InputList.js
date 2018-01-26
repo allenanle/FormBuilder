@@ -7,7 +7,7 @@ import Input from '../components/Input'
 
 let InputList = (props) => (
   !props.isSubInputList ?
-  // QUESTION LIST
+  // MAIN INPUT LIST
   <div>
     { Object.keys(props.inputs).map(id => {
       if (props.inputs[id].parentId === null) {
