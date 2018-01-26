@@ -8,9 +8,17 @@ export const addQuestion = ({ parentId }) => ({
     id: questionId++,
     parentId,
     subs: [],
-    questionInput: '',
+    questionText: '',
     questionType: '',
     conditionType: '',
-    conditionInput: ''
+    conditionText: ''
+  }
+})
+
+export const updateField = ({ field, input }) => ({
+  type: 'UPDATE_FIELD',
+  payload: {
+    field,
+    input
   }
 })
