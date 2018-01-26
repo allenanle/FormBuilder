@@ -15,9 +15,10 @@ export const addQuestion = ({ parentId }) => ({
   }
 })
 
-export const updateField = ({ field, input }) => ({
+export const updateField = ({ id, field, input }) => ({
   type: 'UPDATE_FIELD',
   payload: {
+    id,
     field,
     input
   }
