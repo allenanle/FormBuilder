@@ -16,11 +16,11 @@ export const addInput = ({ parentId }) => ({
   }
 })
 
-export const updateField = ({ id, field, input }) => ({
+export const updateField = ({ id, field, value }) => ({
   type: UPDATE_FIELD,
   payload: {
     id,
     field,
-    input
+    value
   }
 })

@@ -16,7 +16,7 @@ const inputs = (state = {}, action) => {
       return newState
 
     case UPDATE_FIELD:
-      newState[payload.id][payload.field] = payload.input
+      newState[payload.id][payload.field] = payload.value
       return newState
 
     default:
