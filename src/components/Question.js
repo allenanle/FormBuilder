@@ -10,9 +10,9 @@ const Question = (props) => {
 
   return (
     <div>
-      <div className='question'>
+      <div className='question-form'>
         {/* CONDITION */}
-        {props.parentId !== null &&
+        { props.parentId !== null &&
           <div>
             <label>
               Condition
@@ -61,7 +61,7 @@ const Question = (props) => {
 
       {/* SUB-INPUT LIST */}
       <div>
-        {props.subs.length > 0 &&
+        { props.subs.length > 0 &&
           <QuestionList
             isSubInputList={ true }
             { ...props }

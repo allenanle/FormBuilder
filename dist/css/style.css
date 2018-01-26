@@ -2,9 +2,9 @@ body {
   font-family: 'Courier New';
 }
 
-div.question {
+div.question-form {
   display: table;
-  padding: 3px;
+  padding: 3px 5px 5px 5px;
   margin: 10px 0px 0px 20px;
   border: 1px solid lightgray;
   border-radius: 3px;
@@ -14,4 +14,16 @@ div.sub-input-list {
   display: table;
   margin-top: -8px;
   margin-left: 25px;
+}
+
+input {
+  margin: 3px;
+}
+
+select {
+  margin: 3px;
+}
+
+button {
+  margin: 3px;
 }
