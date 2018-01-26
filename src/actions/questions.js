@@ -1,4 +1,5 @@
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const UPDATE_FIELD = 'UPDATE_FIELD'
 
 let questionId = 0
 
