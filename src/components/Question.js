@@ -1,6 +1,5 @@
 import React from 'react'
 
-import SubInputList from './SubInputList'
 import QuestionList from '../containers/QuestionList'
 
 
