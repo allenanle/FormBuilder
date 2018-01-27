@@ -1,7 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addInput, updateField } from '../actions/inputs'
+import {
+  addInput,
+  deleteInput,
+  updateField
+} from '../actions/inputs'
 import Input from '../components/Input'
 
 
@@ -16,6 +20,7 @@ let InputList = (props) => (
             key={ id }
             inputs={ props.inputs }
             addInput={ props.addInput }
+            deleteInput={ props.deleteInput }
             updateField={ props.updateField }
             { ...props.inputs[id] }
           />
@@ -31,6 +36,7 @@ let InputList = (props) => (
           key={ id }
           inputs={ props.inputs }
           addInput={ props.addInput }
+          deleteInput={ props.deleteInput }
           updateField={ props.updateField }
           { ...props.inputs[id] }
         />
@@ -51,6 +57,7 @@ const mapStateToProps = (state, ownProps) => (
 
 const mapDispatchToProps = {
   addInput,
+  deleteInput,
   updateField
 }
 

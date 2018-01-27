@@ -8,11 +8,16 @@ class Input extends React.Component {
     super(props)
 
     this.onAddSubInput = this.onAddSubInput.bind(this)
+    this.onDeleteInput = this.onDeleteInput.bind(this)
     this.onInputChange = this.onInputChange.bind(this)
   }
 
   onAddSubInput() {
     this.props.addInput({ parentId: this.props.id })
+  }
+
+  onDeleteInput() {
+    this.props.deleteInput(this.props.id)
   }
 
   onInputChange(field, value) {
@@ -87,7 +92,7 @@ class Input extends React.Component {
             <button onClick={ this.onAddSubInput }>
               ADD SUB-INPUT
             </button>
-            <button>DELETE</button>
+            <button onClick={ this.onDeleteInput }>DELETE</button>
           </div>
         </div>
 
