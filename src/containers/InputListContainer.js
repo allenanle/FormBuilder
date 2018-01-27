@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 
+import InputList from '../components/InputList'
 import {
   addInput,
   deleteInput,
   updateField
 } from '../actions/inputs'
-import InputList from '../components/InputList'
 
 
 const mapStateToProps = (state, ownProps) => (
