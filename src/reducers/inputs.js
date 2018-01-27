@@ -1,7 +1,10 @@
 import {
   ADD_INPUT,
+  DELETE_INPUT,
   UPDATE_FIELD
 } from '../actions/inputs.js'
+
+import deleteInputs from '../utils'
 
 const inputs = (state = {}, action) => {
   const payload = action.payload
@@ -13,6 +16,10 @@ const inputs = (state = {}, action) => {
         newState[payload.parentId].subs.push(payload.id)
       }
       newState[payload.id] = payload
+      return newState
+
+    case DELETE_INPUT:
+      deleteInputs(payload.id, newState)
       return newState
 
     case UPDATE_FIELD:
