@@ -7,14 +7,22 @@ import AddInput from '../components/AddInput'
 
 
 export default ({ addInput, switchTab }) => {
-  const onClick = (e) => switchTab(e.target.value)
+  const onClick = (current) => {
+    if (current === 0) {
+      switchTab('CREATE')
+    } else if (current === 1) {
+      switchTab('PREVIEW')
+    } else {
+      switchTab('EXPORT')
+    }
+  }
 
   return (
-    <Tabs>
+    <Tabs onSelect={ onClick }>
       <TabList>
-        <Tab onClick={ onClick } value='CREATE'>CREATE</Tab>
-        <Tab onClick={ onClick } value='PREVIEW'>PREVIEW</Tab>
-        <Tab onClick={ onClick } value='EXPORT'>EXPORT</Tab>
+        <Tab eventKey={ 0 } value='CREATE'>CREATE</Tab>
+        <Tab eventKey={ 1 } value='PREVIEW'>PREVIEW</Tab>
+        <Tab eventKey={ 2 } value='EXPORT'>EXPORT</Tab>
       </TabList>
 
       <TabPanel>
