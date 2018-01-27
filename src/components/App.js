@@ -6,9 +6,7 @@ import TabsContainer from '../containers/TabsContainer'
 
 const App = () => (
   <div>
-    <h1 style={{ textAlign: 'center' }}>
-      FORM BUILDER
-    </h1>
+    <h1>FORM BUILDER</h1>
 
     <TabsContainer />
   </div>

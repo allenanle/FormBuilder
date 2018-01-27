@@ -47,7 +47,7 @@ class Input extends React.Component {
               </label>
               <label>
                 <input
-                  type="text"
+                  type='text'
                   onBlur={ (e) => this.onInputChange(
                     'conditionText',
                     e.target.value.trim()
@@ -60,9 +60,10 @@ class Input extends React.Component {
           {/* QUESTION */}
           <div>
             <label>
-              {this.props.id} • Question
+              Question
               <input
-                type="text"
+                className='question-text'
+                type='text'
                 onBlur={ (e) => this.onInputChange(
                   'questionText',
                   e.target.value.trim()
@@ -73,6 +74,7 @@ class Input extends React.Component {
               <label>
                 Type
                 <select
+                  className='question-type'
                   onChange={ (e) => this.onInputChange(
                     'questionType',
                     e.target.value
@@ -88,7 +90,7 @@ class Input extends React.Component {
           </div>
 
           {/* BUTTONS */}
-          <div>
+          <div className='input-form-buttons'>
             <button onClick={ this.onAddSubInput }>
               ADD SUB-INPUT
             </button>

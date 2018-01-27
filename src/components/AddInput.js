@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const AddInput = ({ addInput }) => (
-  <div>
+  <div className='add-input-button'>
     <button onClick={ () => addInput({ parentId: null }) }>
       ADD INPUT
     </button>
