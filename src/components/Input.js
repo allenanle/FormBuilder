@@ -27,7 +27,7 @@ class Input extends React.Component {
   render() {
     return (
       <div>
-        <div className='question-form'>
+        <div className='input-form'>
           {/* CONDITION */}
           { this.props.parentId !== null &&
             <div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { addInput } from '../actions/inputs'
 import InputListContainer from './InputListContainer'
+import TabsContainer from './TabsContainer'
 import AddInput from '../components/AddInput'
 
 
@@ -12,6 +13,7 @@ let App = ({ addInput }) => (
       FORM BUILDER
     </h1>
 
+    <TabsContainer />
     <InputListContainer />
     <AddInput addInput={ addInput } />
   </div>
