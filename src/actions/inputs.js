@@ -1,4 +1,5 @@
 export const ADD_INPUT = 'ADD_INPUT'
+export const DELETE_INPUT = 'DELETE_INPUT'
 export const UPDATE_FIELD = 'UPDATE_FIELD'
 
 let inputId = 0
@@ -13,6 +14,13 @@ export const addInput = ({ parentId }) => ({
     questionType: '',
     conditionType: '',
     conditionText: ''
+  }
+})
+
+export const deleteInput = (id) => ({
+  type: DELETE_INPUT,
+  payload: {
+    id
   }
 })
 
