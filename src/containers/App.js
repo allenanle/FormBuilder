@@ -12,8 +12,8 @@ let App = ({ inputs, addInput }) => (
       FORM BUILDER
     </h1>
 
-    <AddInput addInput={ addInput } />
     <InputList />
+    <AddInput addInput={ addInput } />
   </div>
 )
 
