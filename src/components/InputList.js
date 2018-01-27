@@ -1,15 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-import {
-  addInput,
-  deleteInput,
-  updateField
-} from '../actions/inputs'
-import Input from '../components/Input'
+import Input from './Input'
 
 
-let InputList = (props) => (
+const InputList = (props) => (
   !props.isSubInputList ?
   // MAIN INPUT LIST
   <div>
@@ -44,23 +38,5 @@ let InputList = (props) => (
     }) }
   </div>
 )
-
-const mapStateToProps = (state, ownProps) => (
-  ownProps.isSubInputList ?
-  {
-    ...ownProps
-  } : {
-    inputs: state.inputs,
-    isSubInputList: false
-  }
-)
-
-const mapDispatchToProps = {
-  addInput,
-  deleteInput,
-  updateField
-}
-
-InputList = connect(mapStateToProps, mapDispatchToProps)(InputList)
 
 export default InputList

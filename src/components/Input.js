@@ -1,6 +1,6 @@
 import React from 'react'
 
-import InputList from '../containers/InputList'
+import InputList from './InputList'
 
 
 class Input extends React.Component {
@@ -60,7 +60,7 @@ class Input extends React.Component {
           {/* QUESTION */}
           <div>
             <label>
-              Question
+              {this.props.id} • Question
               <input
                 type="text"
                 onBlur={ (e) => this.onInputChange(
