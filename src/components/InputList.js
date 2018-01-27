@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Input from './Input'
+import InputPreview from './InputPreview'
 
 
 const InputList = (props) => (
@@ -9,16 +10,27 @@ const InputList = (props) => (
   <div>
     { Object.keys(props.inputs).map(id => {
       if (props.inputs[id].parentId === null) {
-        return (
-          <Input
-            key={ id }
-            inputs={ props.inputs }
-            addInput={ props.addInput }
-            deleteInput={ props.deleteInput }
-            updateField={ props.updateField }
-            { ...props.inputs[id] }
-          />
-        )
+        if (props.tab === 'CREATE') {
+          // CREATE TAB
+          return (
+            <Input
+              key={ id }
+              inputs={ props.inputs }
+              addInput={ props.addInput }
+              deleteInput={ props.deleteInput }
+              updateField={ props.updateField }
+              { ...props.inputs[id] }
+            />
+          )
+        } else {
+          // PREVIEW TAB
+          return (
+            <InputPreview
+              key={ id }
+              { ...props.inputs[id] }
+            />
+          )
+        }
       }
     }) }
   </div> :

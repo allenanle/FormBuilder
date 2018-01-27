@@ -47,7 +47,6 @@ class Input extends React.Component {
               </label>
               <label>
                 <input
-                  type='text'
                   onBlur={ (e) => this.onInputChange(
                     'conditionText',
                     e.target.value.trim()
@@ -63,7 +62,6 @@ class Input extends React.Component {
               Question
               <input
                 className='question-text'
-                type='text'
                 onBlur={ (e) => this.onInputChange(
                   'questionText',
                   e.target.value.trim()
