@@ -14,7 +14,6 @@ let App = ({ addInput }) => (
     </h1>
 
     <TabsContainer />
-    <InputListContainer />
     <AddInput addInput={ addInput } />
   </div>
 )
