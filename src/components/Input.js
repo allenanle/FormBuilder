@@ -34,6 +34,7 @@ class Input extends React.Component {
               <label>
                 Condition
                 <select
+                  defaultValue={ this.props.conditionType }
                   onChange={ (e) => this.onInputChange(
                     'conditionType',
                     e.target.value
@@ -47,6 +48,8 @@ class Input extends React.Component {
               </label>
               <label>
                 <input
+                  className='condition-text'
+                  defaultValue={ this.props.conditionText }
                   onBlur={ (e) => this.onInputChange(
                     'conditionText',
                     e.target.value.trim()
@@ -62,6 +65,7 @@ class Input extends React.Component {
               Question
               <input
                 className='question-text'
+                defaultValue={ this.props.questionText }
                 onBlur={ (e) => this.onInputChange(
                   'questionText',
                   e.target.value.trim()
@@ -73,6 +77,7 @@ class Input extends React.Component {
                 Type
                 <select
                   className='question-type'
+                  defaultValue={ this.props.questionType }
                   onChange={ (e) => this.onInputChange(
                     'questionType',
                     e.target.value
