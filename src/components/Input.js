@@ -28,15 +28,25 @@ class Input extends React.Component {
             <div>
               <label>
                 Condition
-                <select>
-                  <option>EQUALS</option>
-                  <option>GREATER THAN</option>
-                  <option>LESS THAN</option>
+                <select
+                  onChange={ (e) => this.onInputChange(
+                    'conditionType',
+                    e.target.value
+                  ) }
+                >
+                  <option hidden>SELECT</option>
+                  <option value='='>EQUALS</option>
+                  <option value='>'>GREATER THAN</option>
+                  <option value='<'>LESS THAN</option>
                 </select>
               </label>
               <label>
                 <input
                   type="text"
+                  onBlur={ (e) => this.onInputChange(
+                    'conditionText',
+                    e.target.value.trim()
+                  ) }
                 />
               </label>
             </div>
@@ -63,7 +73,7 @@ class Input extends React.Component {
                     e.target.value
                   ) }
                 >
-                  <option hidden></option>
+                  <option hidden>SELECT</option>
                   <option value='yes/no'>YES/NO</option>
                   <option value='text'>TEXT</option>
                   <option value='number'>NUMBER</option>
