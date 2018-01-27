@@ -7,10 +7,10 @@ import AddInput from '../components/AddInput'
 
 
 export default ({ addInput, switchTab }) => {
-  const onClick = (current) => {
-    if (current === 0) {
+  const onSelect = (index) => {
+    if (index === 0) {
       switchTab('CREATE')
-    } else if (current === 1) {
+    } else if (index === 1) {
       switchTab('PREVIEW')
     } else {
       switchTab('EXPORT')
@@ -18,11 +18,11 @@ export default ({ addInput, switchTab }) => {
   }
 
   return (
-    <Tabs onSelect={ onClick }>
+    <Tabs onSelect={ onSelect }>
       <TabList>
-        <Tab eventKey={ 0 } value='CREATE'>CREATE</Tab>
-        <Tab eventKey={ 1 } value='PREVIEW'>PREVIEW</Tab>
-        <Tab eventKey={ 2 } value='EXPORT'>EXPORT</Tab>
+        <Tab index={ 0 }>CREATE</Tab>
+        <Tab index={ 1 }>PREVIEW</Tab>
+        <Tab index={ 2 }>EXPORT</Tab>
       </TabList>
 
       <TabPanel>
@@ -33,7 +33,7 @@ export default ({ addInput, switchTab }) => {
         <InputListContainer />
       </TabPanel>
       <TabPanel>
-        <InputListContainer />
+        <h1> JSON.stringify(store) </h1>
       </TabPanel>
     </Tabs>
   )
