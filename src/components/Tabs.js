@@ -3,9 +3,10 @@ import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
 
 import InputList from './InputList'
 import InputListContainer from '../containers/InputListContainer'
+import AddInput from '../components/AddInput'
 
 
-export default ({ switchTab }) => {
+export default ({ addInput, switchTab }) => {
   const onClick = (e) => switchTab(e.target.value)
 
   return (
@@ -18,6 +19,7 @@ export default ({ switchTab }) => {
 
       <TabPanel>
         <InputListContainer />
+        <AddInput addInput={ addInput } />
       </TabPanel>
       <TabPanel>
         <InputListContainer />
