@@ -2,9 +2,10 @@ import {
   ADD_INPUT,
   DELETE_INPUT,
   UPDATE_FIELD
-} from '../actions/inputs.js'
+} from '../actions/inputs'
 
 import deleteInputs from '../utils'
+
 
 const inputs = (state = {}, action) => {
   const payload = action.payload
