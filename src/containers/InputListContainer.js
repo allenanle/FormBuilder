@@ -14,8 +14,7 @@ const mapStateToProps = (state, ownProps) => (
     ...ownProps
   } : {
     tab: state.tab,
-    inputs: state.inputs,
-    isSubInputList: false
+    inputs: state.inputs
   }
 )
 
