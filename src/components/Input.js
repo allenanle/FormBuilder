@@ -34,6 +34,7 @@ class Input extends React.Component {
               <label>
                 Condition
                 <select
+                  className='condition-type'
                   defaultValue={ this.props.conditionType }
                   onChange={ (e) => this.onInputChange(
                     'conditionType',
