@@ -4,7 +4,7 @@ import {
   UPDATE_FIELD
 } from '../actions/inputs'
 
-import deleteInputs from '../utils'
+import deleteInput from '../utils'
 
 
 const inputs = (state = {}, action) => {
@@ -20,7 +20,7 @@ const inputs = (state = {}, action) => {
       return newState
 
     case DELETE_INPUT:
-      deleteInputs(payload.id, newState)
+      deleteInput(payload.id, newState)
       return newState
 
     case UPDATE_FIELD:
