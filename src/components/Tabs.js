@@ -6,14 +6,15 @@ import InputListContainer from '../containers/InputListContainer'
 import AddInput from '../components/AddInput'
 
 
-export default ({ addInput, switchTab }) => {
+export default ({ inputs, addInput, switchTab }) => {
   const onSelect = (index) => {
-    if (index === 0) {
-      switchTab('CREATE')
-    } else if (index === 1) {
-      switchTab('PREVIEW')
-    } else {
-      switchTab('EXPORT')
+    switch (index) {
+      case 0:
+        return switchTab('CREATE')
+      case 1:
+        return switchTab('PREVIEW')
+      case 2:
+        return switchTab('EXPORT')
     }
   }
 
@@ -33,7 +34,7 @@ export default ({ addInput, switchTab }) => {
         <InputListContainer />
       </TabPanel>
       <TabPanel>
-        <h1> JSON.stringify(store) </h1>
+        <table> {JSON.stringify(inputs)} </table>
       </TabPanel>
     </Tabs>
   )
