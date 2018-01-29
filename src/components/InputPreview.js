@@ -19,10 +19,20 @@ class InputPreview extends React.Component {
   }
 
   render() {
+    const {
+      subs,
+      questionText,
+      questionType,
+      conditionType,
+      conditionValue,
+      inputs,
+      answer
+    } = this.props
+
     const meetCondition = checkAnswer({
-      conditionType: this.props.conditionType,
-      conditionValue: this.props.conditionValue,
-      answer: this.props.answer
+      conditionType: conditionType,
+      conditionValue: conditionValue,
+      answer: answer
     })
 
     return (
@@ -31,8 +41,8 @@ class InputPreview extends React.Component {
           <div>
             <div className='input-form-preview'>
               {/* QUESTION */}
-              <label>{ this.props.questionText }</label>
-              { this.props.questionType === 'yes/no' &&
+              <label>{ questionText }</label>
+              { questionType === 'yes/no' &&
                 <div>
                   <input
                     type='radio'
@@ -49,7 +59,7 @@ class InputPreview extends React.Component {
                   <label> No</label>
                 </div>
               }
-              { (this.props.questionType === 'text' || this.props.questionType === 'number') &&
+              { (questionType === 'text' || questionType === 'number') &&
                 <div>
                   <input />
                 </div>
@@ -58,10 +68,10 @@ class InputPreview extends React.Component {
 
             <div className='sub-input-list'>
               {/* SUB-INPUT LIST */}
-              { (this.props.subs.length > 0) &&
+              { (subs.length > 0) &&
                 <InputList
-                  inputs={ this.props.inputs }
-                  subs={ this.props.subs }
+                  inputs={ inputs }
+                  subs={ subs }
                   answer={ this.state.answer }
                   isSubInputList={ true }
                 />
