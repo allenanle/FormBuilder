@@ -32,6 +32,11 @@ export const checkAnswer = ({ conditionType, conditionValue, answer }) => {
     answer = answer.trim().toLowerCase()
   }
 
+  if (Number(answer) !== NaN) {
+    conditionValue = Number(conditionValue)
+    answer = Number(answer)
+  }
+
   switch (conditionType) {
     case '=':
       return answer === conditionValue

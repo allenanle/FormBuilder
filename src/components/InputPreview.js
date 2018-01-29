@@ -42,6 +42,7 @@ class InputPreview extends React.Component {
             <div className='input-form-preview'>
               {/* QUESTION */}
               <label>{ questionText }</label>
+              {/* Yes/No Radio Buttons */}
               { questionType === 'yes/no' &&
                 <div>
                   <input
@@ -59,9 +60,12 @@ class InputPreview extends React.Component {
                   <label> No</label>
                 </div>
               }
+              {/* Text/Number Box */}
               { (questionType === 'text' || questionType === 'number') &&
                 <div>
                   <input
+                    type={ questionType }
+                    placeholder={ questionType }
                     onChange={ this.onChange }
                   />
                 </div>

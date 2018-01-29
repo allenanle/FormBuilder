@@ -31,13 +31,14 @@ class Input extends React.Component {
       questionText,
       questionType,
       conditionType,
-      conditionValue
+      conditionValue,
+      inputs
     } = this.props
 
     return (
       <div>
         <div className='input-form'>
-        {/* CONDITION */}
+        {/* CONDITION ROW */}
           { parentId !== null &&
             <div>
               <label>
@@ -58,6 +59,8 @@ class Input extends React.Component {
               </label>
               <label>
                 <input
+                  type={ inputs[parentId].questionType }
+                  placeholder={ inputs[parentId].questionType }
                   className='condition-value'
                   defaultValue={ conditionValue }
                   onBlur={ (e) => this.onInputChange(
@@ -69,7 +72,7 @@ class Input extends React.Component {
             </div>
           }
 
-        {/* QUESTION */}
+        {/* QUESTION ROW */}
           <div>
             <label>
               Question
@@ -102,7 +105,7 @@ class Input extends React.Component {
             </div>
           </div>
 
-        {/* BUTTONS */}
+        {/* BUTTONS ROW */}
           <div className='input-form-buttons'>
             <button onClick={ this.onAddSubInput }>
               ADD SUB-INPUT
