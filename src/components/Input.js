@@ -25,17 +25,26 @@ class Input extends React.Component {
   }
 
   render() {
+    const {
+      parentId,
+      subs,
+      questionText,
+      questionType,
+      conditionType,
+      conditionValue
+    } = this.props
+
     return (
       <div>
         <div className='input-form'>
         {/* CONDITION */}
-          { this.props.parentId !== null &&
+          { parentId !== null &&
             <div>
               <label>
                 Condition
                 <select
                   className='condition-type'
-                  defaultValue={ this.props.conditionType }
+                  defaultValue={ conditionType }
                   onChange={ (e) => this.onInputChange(
                     'conditionType',
                     e.target.value
@@ -50,7 +59,7 @@ class Input extends React.Component {
               <label>
                 <input
                   className='condition-value'
-                  defaultValue={ this.props.conditionValue }
+                  defaultValue={ conditionValue }
                   onBlur={ (e) => this.onInputChange(
                     'conditionValue',
                     e.target.value.trim()
@@ -66,7 +75,7 @@ class Input extends React.Component {
               Question
               <input
                 className='question-text'
-                defaultValue={ this.props.questionText }
+                defaultValue={ questionText }
                 onBlur={ (e) => this.onInputChange(
                   'questionText',
                   e.target.value.trim()
@@ -78,7 +87,7 @@ class Input extends React.Component {
                 Type
                 <select
                   className='question-type'
-                  defaultValue={ this.props.questionType }
+                  defaultValue={ questionType }
                   onChange={ (e) => this.onInputChange(
                     'questionType',
                     e.target.value
@@ -104,7 +113,7 @@ class Input extends React.Component {
 
       {/* SUB-INPUT LIST */}
         <div className='sub-input-list'>
-          { this.props.subs.length > 0 &&
+          { subs.length > 0 &&
             <InputList
               isSubInputList={ true }
               { ...this.props }
