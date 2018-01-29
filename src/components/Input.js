@@ -49,8 +49,8 @@ class Input extends React.Component {
               </label>
               <label>
                 <input
-                  className='condition-text'
-                  defaultValue={ this.props.conditionText }
+                  className='condition-value'
+                  defaultValue={ this.props.conditionValue }
                   onBlur={ (e) => this.onInputChange(
                     'conditionValue',
                     e.target.value.trim()
