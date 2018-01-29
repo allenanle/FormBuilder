@@ -28,8 +28,8 @@ export const checkAnswer = ({ conditionType, conditionValue, answer }) => {
   if (answer === '*') return true
 
   if (answer !== null) {
-    conditionValue.trim().toLowerCase()
-    answer.trim().toLowerCase()
+    conditionValue = conditionValue.trim().toLowerCase()
+    answer = answer.trim().toLowerCase()
   }
 
   switch (conditionType) {
