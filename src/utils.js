@@ -1,4 +1,4 @@
-const deleteInput = (id, state) => {
+export const deleteInput = (id, state) => {
   const subsCopy = [...state[id].subs]
 
   // delete its children
@@ -23,20 +23,18 @@ const deleteInput = (id, state) => {
   delete state[id]
 }
 
-const checkAnswer = ({ conditionType, conditionValue, previewValue }) => {
-  if (isNan(conditionValue)) {
+export const checkAnswer = ({ conditionType, conditionValue, answer }) => {
+  if (isNaN(answer)) {
     conditionValue.trim().toLowerCase()
-    previewValue.trim().toLowerCase()
+    answer.trim().toLowerCase()
   }
 
   switch (conditionType) {
     case '=':
-      return previewValue === conditionValue ? true : false
+      return answer === conditionValue
     case '>':
-      return previewValue > conditionValue ? true : false
+      return answer > conditionValue
     case '<':
-      return previewValue < conditionValue ? true : false
+      return answer < conditionValue
   }
 }
-
-export default deleteInput

@@ -4,7 +4,7 @@ import {
   UPDATE_FIELD
 } from '../actions/inputs'
 
-import deleteInput from '../utils'
+import { deleteInput } from '../utils'
 
 
 const inputs = (state = {}, action) => {
