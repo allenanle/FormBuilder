@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server",
+    "dev": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start": "npm run build & npm run dev"
   },
   "author": "Allen An Le",
