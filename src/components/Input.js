@@ -115,7 +115,7 @@ class Input extends React.Component {
         <div className='sub-input-list'>
           { subs.length > 0 &&
             <InputList
-              isSubInputList={ true }
+              isSubList={ true }
               { ...this.props }
             />
           }

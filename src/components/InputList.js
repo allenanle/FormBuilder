@@ -5,7 +5,7 @@ import InputPreview from './InputPreview'
 
 
 const InputList = (props) => {
-  const inputIds = props.isSubInputList ?
+  const inputIds = props.isSubList ?
     (props.subs) :
     (Object.keys(props.inputs).filter(id => {
         return props.inputs[id].parentId === null

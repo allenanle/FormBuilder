@@ -72,7 +72,7 @@ class InputPreview extends React.Component {
               {/* SUB-INPUT LIST */}
               { (subs.length > 0) &&
                 <InputList
-                  isSubInputList={ true }
+                  isSubList={ true }
                   inputs={ inputs }
                   subs={ subs }
                   answer={ this.state.answer }
