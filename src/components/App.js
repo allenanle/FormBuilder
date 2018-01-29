@@ -7,7 +7,6 @@ import TabsContainer from '../containers/TabsContainer'
 const App = () => (
   <div>
     <h1>FORM BUILDER</h1>
-
     <TabsContainer />
   </div>
 )

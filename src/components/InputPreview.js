@@ -61,7 +61,9 @@ class InputPreview extends React.Component {
               }
               { (questionType === 'text' || questionType === 'number') &&
                 <div>
-                  <input />
+                  <input
+                    onChange={ this.onChange }
+                  />
                 </div>
               }
             </div>
@@ -70,10 +72,10 @@ class InputPreview extends React.Component {
               {/* SUB-INPUT LIST */}
               { (subs.length > 0) &&
                 <InputList
+                  isSubInputList={ true }
                   inputs={ inputs }
                   subs={ subs }
                   answer={ this.state.answer }
-                  isSubInputList={ true }
                 />
               }
             </div>
