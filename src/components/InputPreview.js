@@ -1,30 +1,50 @@
 import React from 'react'
 
 import InputList from './InputList'
-
+import { checkAnswer } from '../utils'
 
 class InputPreview extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selection: ''
+      answer: '',
+      meetCondition: checkAnswer({
+        conditionType: this.props.conditionType,
+        conditionValue: this.props.conditionValue,
+        answer: this.props.answer
+      })
     }
+
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange(e) {
+    this.setState({ answer: e.target.value })
   }
 
   render() {
     <div>
       <div className='input-form-preview'>
         {/* QUESTION */}
-          <label>{ props.questionText }</label>
-          { props.questionType === 'yes/no' &&
+          <label>{ this.props.questionText }</label>
+          { this.props.questionType === 'yes/no' &&
             <div>
-              <input type='radio' value='yes' />
+              <input
+                type='radio'
+                onClick={ this.onChange }
+                checked={ this.state.answer === 'yes' }
+                value='yes' />
               <label> Yes</label>
-              <input type='radio' value='no' />
+              <input
+                type='radio'
+                onClick={ this.onChange }
+                checked={ this.state.answer === 'no' }
+                value='no'
+              />
               <label> No</label>
             </div>
           }
-          { (props.questionType === 'text' || props.questionType === 'number') &&
+          { (this.props.questionType === 'text' || this.props.questionType === 'number') &&
             <div>
               <input />
             </div>
@@ -33,10 +53,11 @@ class InputPreview extends React.Component {
 
       {/* SUB-INPUT LIST */}
       <div className='sub-input-list'>
-        { props.subs.length > 0 &&
+        { (this.props.subs.length > 0) &&
           <InputList
+            answer={ this.state.answer }
             isSubInputList={ true }
-            { ...props }
+            { ...this.props }
           />
         }
       </div>
