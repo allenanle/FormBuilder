@@ -10,12 +10,8 @@ import {
 
 const mapStateToProps = (state, ownProps) => (
   ownProps.isSubInputList ?
-  {
-    ...ownProps
-  } : {
-    tab: state.tab,
-    inputs: state.inputs
-  }
+  { ...ownProps } :
+  { tab: state.tab, inputs: state.inputs }
 )
 
 const mapDispatchToProps = {
