@@ -34,7 +34,7 @@ export default ({ inputs, addInput, switchTab }) => {
         <InputListContainer />
       </TabPanel>
       <TabPanel>
-        <table> {JSON.stringify(inputs)} </table>
+        <div className='export-text-box'> {JSON.stringify(inputs).trim()} </div>
       </TabPanel>
     </Tabs>
   )
