@@ -32,7 +32,8 @@ export const checkAnswer = ({ conditionType, conditionValue, answer }) => {
     answer = answer.trim().toLowerCase()
   }
 
-  if (Number(answer) !== NaN) {
+  // If answer is a number
+  if (!isNaN(Number(answer))) {
     conditionValue = Number(conditionValue)
     answer = Number(answer)
   }

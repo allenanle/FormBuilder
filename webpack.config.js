@@ -16,7 +16,7 @@ module.exports = {
     contentBase: DIST_DIR,
     port: 9009,
     inline: true,
-    open: false
+    open: true
   },
 
   module: {
