@@ -28,7 +28,7 @@ class Input extends React.Component {
     return (
       <div>
         <div className='input-form'>
-          {/* CONDITION */}
+        {/* CONDITION */}
           { this.props.parentId !== null &&
             <div>
               <label>
@@ -52,7 +52,7 @@ class Input extends React.Component {
                   className='condition-text'
                   defaultValue={ this.props.conditionText }
                   onBlur={ (e) => this.onInputChange(
-                    'conditionText',
+                    'conditionValue',
                     e.target.value.trim()
                   ) }
                 />
@@ -60,7 +60,7 @@ class Input extends React.Component {
             </div>
           }
 
-          {/* QUESTION */}
+        {/* QUESTION */}
           <div>
             <label>
               Question
@@ -85,7 +85,7 @@ class Input extends React.Component {
                   ) }
                 >
                   <option hidden>SELECT</option>
-                  <option value='yes/no'>YES/NO</option>
+                  <option value='yes/no'>YES / NO</option>
                   <option value='text'>TEXT</option>
                   <option value='number'>NUMBER</option>
                 </select>
@@ -93,7 +93,7 @@ class Input extends React.Component {
             </div>
           </div>
 
-          {/* BUTTONS */}
+        {/* BUTTONS */}
           <div className='input-form-buttons'>
             <button onClick={ this.onAddSubInput }>
               ADD SUB-INPUT
@@ -102,7 +102,7 @@ class Input extends React.Component {
           </div>
         </div>
 
-        {/* SUB-INPUT LIST */}
+      {/* SUB-INPUT LIST */}
         <div className='sub-input-list'>
           { this.props.subs.length > 0 &&
             <InputList

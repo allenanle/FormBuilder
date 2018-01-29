@@ -13,7 +13,7 @@ export const addInput = ({ parentId }) => ({
     questionText: '',
     questionType: '',
     conditionType: '',
-    conditionText: ''
+    conditionValue: ''
   }
 })
 
