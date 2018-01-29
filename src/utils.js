@@ -1,7 +1,9 @@
 const deleteInput = (id, state) => {
+  const subsCopy = [...state[id].subs]
+
   // delete its children
-  if (state[id].subs.length) {
-    state[id].subs.forEach(subId => {
+  if (subsCopy) {
+    subsCopy.forEach(subId => {
       deleteInput(subId, state)
     })
   }
