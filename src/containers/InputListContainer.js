@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => (
   {
     tab: state.tab,
     inputs: state.inputs,
-    answer: 'PARENT INPUT'
+    // Default answer for parent level questions
+    answer: '*'
   }
 )
 

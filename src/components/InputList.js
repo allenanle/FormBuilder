@@ -33,8 +33,8 @@ const InputList = (props) => {
           return (
             <InputPreview
               key={ id }
-              answer={ props.answer }
               inputs={ props.inputs }
+              answer={ props.answer }
               { ...props.inputs[id] }
             />
           )
