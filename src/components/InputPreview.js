@@ -7,18 +7,8 @@ import { checkAnswer } from '../utils'
 class InputPreview extends React.Component {
   constructor(props) {
     super(props)
-
-    console.log(this.props.answer)
-    console.log(this.props.conditionType)
-    console.log(this.props.conditionValue)
-
     this.state = {
-      answer: null,
-      meetCondition: checkAnswer({
-        conditionType: this.props.conditionType,
-        conditionValue: this.props.conditionValue,
-        answer: this.props.answer
-      })
+      answer: null
     }
 
     this.onChange = this.onChange.bind(this)
@@ -29,12 +19,18 @@ class InputPreview extends React.Component {
   }
 
   render() {
+    const meetCondition = checkAnswer({
+      conditionType: this.props.conditionType,
+      conditionValue: this.props.conditionValue,
+      answer: this.props.answer
+    })
+
     return (
       <div>
-      { this.state.meetCondition &&
-        <div>
-          <div className='input-form-preview'>
-            {/* QUESTION */}
+        { meetCondition &&
+          <div>
+            <div className='input-form-preview'>
+              {/* QUESTION */}
               <label>{ this.props.questionText }</label>
               { this.props.questionType === 'yes/no' &&
                 <div>
@@ -58,21 +54,21 @@ class InputPreview extends React.Component {
                   <input />
                 </div>
               }
-          </div>
+            </div>
 
-          <div className='sub-input-list'>
-          {/* SUB-INPUT LIST */}
-            { (this.props.subs.length > 0) &&
-              <InputList
-                inputs={ this.props.inputs }
-                subs={ this.props.subs }
-                answer={ this.state.answer }
-                isSubInputList={ true }
-              />
-            }
+            <div className='sub-input-list'>
+              {/* SUB-INPUT LIST */}
+              { (this.props.subs.length > 0) &&
+                <InputList
+                  inputs={ this.props.inputs }
+                  subs={ this.props.subs }
+                  answer={ this.state.answer }
+                  isSubInputList={ true }
+                />
+              }
+            </div>
           </div>
-        </div>
-      }
+        }
       </div>
     )
   }

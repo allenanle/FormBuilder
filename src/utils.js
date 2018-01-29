@@ -24,7 +24,7 @@ export const deleteInput = (id, state) => {
 }
 
 export const checkAnswer = ({ conditionType, conditionValue, answer }) => {
-  if (answer === 'PARENT') return true
+  if (answer === 'PARENT INPUT') return true
   if (answer !== null) {
     conditionValue.trim().toLowerCase()
     answer.trim().toLowerCase()

@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => (
   {
     tab: state.tab,
     inputs: state.inputs,
-    answer: 'PARENT'
+    answer: 'PARENT INPUT'
   }
 )
 
