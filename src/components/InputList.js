@@ -33,6 +33,7 @@ const InputList = (props) => {
           return (
             <InputPreview
               key={ id }
+              answer={ props.answer }
               inputs={ props.inputs }
               { ...props.inputs[id] }
             />

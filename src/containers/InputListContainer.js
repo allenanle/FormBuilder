@@ -11,7 +11,11 @@ import {
 const mapStateToProps = (state, ownProps) => (
   ownProps.isSubInputList ?
   { ...ownProps } :
-  { tab: state.tab, inputs: state.inputs }
+  {
+    tab: state.tab,
+    inputs: state.inputs,
+    answer: 'PARENT'
+  }
 )
 
 const mapDispatchToProps = {
