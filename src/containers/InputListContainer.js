@@ -8,16 +8,12 @@ import {
 } from '../actions/inputs'
 
 
-const mapStateToProps = (state, ownProps) => (
-  ownProps.isSubInputList ?
-  { ...ownProps } :
-  {
-    tab: state.tab,
-    inputs: state.inputs,
-    // Default answer for parent level questions
-    answer: '*'
-  }
-)
+const mapStateToProps = (state) => ({
+  tab: state.tab,
+  inputs: state.inputs,
+  // Default answer for parent level questions
+  answer: '*'
+})
 
 const mapDispatchToProps = {
   addInput,
