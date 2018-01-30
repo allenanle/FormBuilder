@@ -1,13 +1,14 @@
+import { v4 } from 'node-uuid'
+
+
 export const ADD_INPUT = 'ADD_INPUT'
 export const DELETE_INPUT = 'DELETE_INPUT'
 export const UPDATE_FIELD = 'UPDATE_FIELD'
 
-let inputId = 0
-
 export const addInput = ({ parentId }) => ({
   type: ADD_INPUT,
   payload: {
-    id: inputId++,
+    id: v4(),
     parentId,
     subs: [],
     questionText: '',

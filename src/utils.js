@@ -1,5 +1,5 @@
 export const deleteInput = (id, state) => {
-  const subsCopy = [...state[id].subs]
+  const subsCopy = [ ...state[id].subs ]
 
   // delete its children
   if (subsCopy) {
