@@ -53,8 +53,12 @@ class Input extends React.Component {
                 >
                   <option hidden>SELECT</option>
                   <option value='='>EQUALS</option>
-                  <option value='>'>GREATER THAN</option>
-                  <option value='<'>LESS THAN</option>
+                  { inputs[parentId].questionType !== 'yes/no' &&
+                    <option value='>'>GREATER THAN</option>
+                  }
+                  { inputs[parentId].questionType !== 'yes/no' &&
+                    <option value='<'>LESS THAN</option>
+                  }
                 </select>
               </label>
               <label>
