@@ -64,16 +64,32 @@ class Input extends React.Component {
                 </select>
               </label>
               <label>
-                <input
-                  type={ inputs[parentId].questionType }
-                  placeholder={ inputs[parentId].questionType }
-                  className='condition-value'
-                  defaultValue={ conditionValue }
-                  onBlur={ (e) => this.onInputChange(
-                    'conditionValue',
-                    e.target.value.trim()
-                  ) }
-                />
+                { !ifYesNo &&
+                  <input
+                    type={ inputs[parentId].questionType }
+                    placeholder={ inputs[parentId].questionType }
+                    className='condition-value'
+                    defaultValue={ conditionValue }
+                    onBlur={ (e) => this.onInputChange(
+                      'conditionValue',
+                      e.target.value.trim()
+                    ) }
+                  />
+                }
+                { ifYesNo &&
+                  <select
+                    className='condition-value'
+                    defaultValue={ conditionType }
+                    onChange={ (e) => this.onInputChange(
+                      'conditionValue',
+                      e.target.value
+                    ) }
+                  >
+                    <option hidden>SELECT</option>
+                    <option value='yes'>YES</option>
+                    <option value='no'>NO</option>
+                  </select>
+                }
               </label>
             </div>
           }
