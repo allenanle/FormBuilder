@@ -35,6 +35,8 @@ class Input extends React.Component {
       inputs
     } = this.props
 
+    const ifYesNo = parentId !== null ? inputs[parentId].questionType === 'yes/no' : null
+
     return (
       <div>
         <div className='input-form'>
@@ -53,10 +55,10 @@ class Input extends React.Component {
                 >
                   <option hidden>SELECT</option>
                   <option value='='>EQUALS</option>
-                  { inputs[parentId].questionType !== 'yes/no' &&
+                  { !ifYesNo &&
                     <option value='>'>GREATER THAN</option>
                   }
-                  { inputs[parentId].questionType !== 'yes/no' &&
+                  { !ifYesNo &&
                     <option value='<'>LESS THAN</option>
                   }
                 </select>
